@@ -2,7 +2,7 @@
 
 const Test = require('tape');
 const Enjoi = require('../lib/enjoi');
-const Joi = require('joi');
+const Joi = require('joi-browser');
 
 Test('enjoi', function (t) {
 

@@ -2,7 +2,6 @@ import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import eslint from 'rollup-plugin-eslint';
-import json from 'rollup-plugin-json';
 import builtins from 'rollup-plugin-node-builtins';
 
 export default {
@@ -13,14 +12,16 @@ export default {
     format: 'iife'
   },
   plugins: [
-    builtins(),
+    eslint({
+      fix: true
+    }),
     nodeResolve({
       main: false,
       browser: true,
+      preferBuiltins: true
     }),
-    commonjs({
-      sourceMap: true
-    }),
+    commonjs(),
+    builtins(),
     babel({
       exclude: 'node_modules/**',
       babelrc: false,
@@ -35,10 +36,6 @@ export default {
       plugins: [
         "external-helpers"
       ]
-    }),
-    json(),
-    eslint({
-      fix: true
     })
   ]
 };
