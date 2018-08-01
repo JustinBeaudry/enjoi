@@ -49,7 +49,7 @@
     "rollup-plugin-json": "3.x.x",
     "rollup-plugin-node-builtins": "2.x.x",
     "rollup-plugin-node-resolve": "3.x.x",
-    "rollup-plugin-terser": "^1.0.1",
+    "rollup-plugin-terser": "1.x.x",
     "tape": "4.x.x"
   }
 }
