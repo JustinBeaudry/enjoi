@@ -3,6 +3,8 @@ import commonjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
 import eslint from 'rollup-plugin-eslint';
 import builtins from 'rollup-plugin-node-builtins';
+import {terser} from 'rollup-plugin-terser';
+
 
 export default {
   input: './lib/enjoi.js',
@@ -36,6 +38,7 @@ export default {
       plugins: [
         "external-helpers"
       ]
-    })
+    }),
+    terser()
   ]
 };
